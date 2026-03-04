@@ -1,0 +1,134 @@
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--navbar-height);
+    transition: margin-right var(--transition-slow);
+}
+
+.dashboard--chat-open .dashboard__content {
+    margin-right: var(--sidebar-width);
+}
+
+/* ===== Config Bar ===== */
+.dashboard__config {
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+.dashboard__config-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-3) var(--space-6);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.dashboard__config-toggle:hover {
+    color: var(--color-text-primary);
+}
+
+.dashboard__config-icon {
+    animation: spin 4s linear infinite;
+    animation-play-state: paused;
+}
+
+.dashboard__config-toggle:hover .dashboard__config-icon {
+    animation-play-state: running;
+}
+
+.dashboard__config-title {
+    flex: 1;
+    text-align: left;
+}
+
+.dashboard__config-panel {
+    padding: 0 var(--space-6) var(--space-5);
+}
+
+.dashboard__config-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-6);
+}
+
+/* ===== Upload Area ===== */
+.dashboard__upload-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8);
+}
+
+.dashboard__upload-container {
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+}
+
+.dashboard__upload-title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.02em;
+}
+
+.dashboard__upload-subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-8);
+    line-height: var(--leading-relaxed);
+}
+
+/* ===== Workspace ===== */
+.dashboard__workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dashboard__workspace-header {
+    padding: var(--space-4) var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+.dashboard__workspace-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    .dashboard--chat-open .dashboard__content {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard__config-row {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .dashboard__upload-area {
+        padding: var(--space-6);
+    }
+
+    .dashboard__workspace-header {
+        padding: var(--space-3) var(--space-4);
+    }
+}

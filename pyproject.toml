@@ -1,0 +1,17 @@
+[project]
+name = "project-researchpaper"
+version = "0.1.0"
+description = "A platform that makes reading research papers easier — structured notes generation & RAG-based Q&A"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+backend = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.34.0",
+    "langchain>=0.3.0",
+    "langchain-community>=0.3.0",
+    "pymupdf>=1.25.0",
+    "python-multipart>=0.0.18",
+]
