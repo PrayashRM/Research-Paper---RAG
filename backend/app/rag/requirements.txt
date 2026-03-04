@@ -1,0 +1,30 @@
+# ─────────────────────────────────────────────
+# RAG System — Python Dependencies
+# ─────────────────────────────────────────────
+
+# PDF Parsing — academic-grade (handles 2-col, math, tables)
+marker-pdf>=0.2.0          # Primary: best for research papers
+pdfplumber>=0.10.0         # Fallback: simpler but reliable
+
+# Embeddings + Reranking
+sentence-transformers>=2.6.0   # bi-encoder embeddings + cross-encoder reranker
+torch>=2.0.0                    # backend for sentence-transformers
+
+# Vector Database
+qdrant-client>=1.8.0            # Qdrant vector DB client
+
+# Sparse Retrieval
+rank-bm25>=0.2.2                # BM25 index for keyword search
+
+# LLM API
+openai>=1.30.0                  # For query rewriting + generation
+                                # Swap to anthropic, cohere, etc. if needed
+
+# Utilities
+numpy>=1.24.0
+python-dotenv>=1.0.0            # Load API keys from .env
+
+# API Layer (optional, for serving)
+fastapi>=0.110.0
+uvicorn>=0.29.0
+python-multipart>=0.0.9         # For PDF file upload endpoint
